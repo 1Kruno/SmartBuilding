@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_package = "SB.grpc";
+
+service roomba
+{
+	rpc roomba(RoombaRequest) returns(APIRoomResponse);
+	rpc roombaout(REmpty) returns(APIRoomResponse);
+}
+
+message RoombaRequest
+{
+	string roombastatus = 1;
+	string roombaroom = 2;
+}
+
+message APIRoomResponse
+{
+	string responsemessage = 1;
+	int32 responsecode = 2;
+}
+
+message REmpty
+{
+}
