@@ -27,68 +27,68 @@ public final class lightsGrpc {
   public static final String SERVICE_NAME = "lights";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<SB.grpc.Lights.SwitchRequest,
-      SB.grpc.Lights.APIResponse> getSwitchMethod;
+  private static volatile io.grpc.MethodDescriptor<SB.grpc.SwitchRequest,
+      SB.grpc.APILightsResponse> getLightswitchMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "switch",
-      requestType = SB.grpc.Lights.SwitchRequest.class,
-      responseType = SB.grpc.Lights.APIResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "lightswitch",
+      requestType = SB.grpc.SwitchRequest.class,
+      responseType = SB.grpc.APILightsResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<SB.grpc.Lights.SwitchRequest,
-      SB.grpc.Lights.APIResponse> getSwitchMethod() {
-    io.grpc.MethodDescriptor<SB.grpc.Lights.SwitchRequest, SB.grpc.Lights.APIResponse> getSwitchMethod;
-    if ((getSwitchMethod = lightsGrpc.getSwitchMethod) == null) {
+  public static io.grpc.MethodDescriptor<SB.grpc.SwitchRequest,
+      SB.grpc.APILightsResponse> getLightswitchMethod() {
+    io.grpc.MethodDescriptor<SB.grpc.SwitchRequest, SB.grpc.APILightsResponse> getLightswitchMethod;
+    if ((getLightswitchMethod = lightsGrpc.getLightswitchMethod) == null) {
       synchronized (lightsGrpc.class) {
-        if ((getSwitchMethod = lightsGrpc.getSwitchMethod) == null) {
-          lightsGrpc.getSwitchMethod = getSwitchMethod = 
-              io.grpc.MethodDescriptor.<SB.grpc.Lights.SwitchRequest, SB.grpc.Lights.APIResponse>newBuilder()
+        if ((getLightswitchMethod = lightsGrpc.getLightswitchMethod) == null) {
+          lightsGrpc.getLightswitchMethod = getLightswitchMethod = 
+              io.grpc.MethodDescriptor.<SB.grpc.SwitchRequest, SB.grpc.APILightsResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "lights", "switch"))
+                  "lights", "lightswitch"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  SB.grpc.Lights.SwitchRequest.getDefaultInstance()))
+                  SB.grpc.SwitchRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  SB.grpc.Lights.APIResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new lightsMethodDescriptorSupplier("switch"))
+                  SB.grpc.APILightsResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new lightsMethodDescriptorSupplier("lightswitch"))
                   .build();
           }
         }
      }
-     return getSwitchMethod;
+     return getLightswitchMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<SB.grpc.Lights.Empty,
-      SB.grpc.Lights.APIResponse> getSwitchoutMethod;
+  private static volatile io.grpc.MethodDescriptor<SB.grpc.SwitchOffAllLights,
+      SB.grpc.APISwitchOffAllLights> getLightswitchallMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "switchout",
-      requestType = SB.grpc.Lights.Empty.class,
-      responseType = SB.grpc.Lights.APIResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<SB.grpc.Lights.Empty,
-      SB.grpc.Lights.APIResponse> getSwitchoutMethod() {
-    io.grpc.MethodDescriptor<SB.grpc.Lights.Empty, SB.grpc.Lights.APIResponse> getSwitchoutMethod;
-    if ((getSwitchoutMethod = lightsGrpc.getSwitchoutMethod) == null) {
+      fullMethodName = SERVICE_NAME + '/' + "lightswitchall",
+      requestType = SB.grpc.SwitchOffAllLights.class,
+      responseType = SB.grpc.APISwitchOffAllLights.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<SB.grpc.SwitchOffAllLights,
+      SB.grpc.APISwitchOffAllLights> getLightswitchallMethod() {
+    io.grpc.MethodDescriptor<SB.grpc.SwitchOffAllLights, SB.grpc.APISwitchOffAllLights> getLightswitchallMethod;
+    if ((getLightswitchallMethod = lightsGrpc.getLightswitchallMethod) == null) {
       synchronized (lightsGrpc.class) {
-        if ((getSwitchoutMethod = lightsGrpc.getSwitchoutMethod) == null) {
-          lightsGrpc.getSwitchoutMethod = getSwitchoutMethod = 
-              io.grpc.MethodDescriptor.<SB.grpc.Lights.Empty, SB.grpc.Lights.APIResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+        if ((getLightswitchallMethod = lightsGrpc.getLightswitchallMethod) == null) {
+          lightsGrpc.getLightswitchallMethod = getLightswitchallMethod = 
+              io.grpc.MethodDescriptor.<SB.grpc.SwitchOffAllLights, SB.grpc.APISwitchOffAllLights>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(
-                  "lights", "switchout"))
+                  "lights", "lightswitchall"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  SB.grpc.Lights.Empty.getDefaultInstance()))
+                  SB.grpc.SwitchOffAllLights.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  SB.grpc.Lights.APIResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new lightsMethodDescriptorSupplier("switchout"))
+                  SB.grpc.APISwitchOffAllLights.getDefaultInstance()))
+                  .setSchemaDescriptor(new lightsMethodDescriptorSupplier("lightswitchall"))
                   .build();
           }
         }
      }
-     return getSwitchoutMethod;
+     return getLightswitchallMethod;
   }
 
   /**
@@ -120,34 +120,34 @@ public final class lightsGrpc {
 
     /**
      */
-    public void switch_(SB.grpc.Lights.SwitchRequest request,
-        io.grpc.stub.StreamObserver<SB.grpc.Lights.APIResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getSwitchMethod(), responseObserver);
+    public void lightswitch(SB.grpc.SwitchRequest request,
+        io.grpc.stub.StreamObserver<SB.grpc.APILightsResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getLightswitchMethod(), responseObserver);
     }
 
     /**
      */
-    public void switchout(SB.grpc.Lights.Empty request,
-        io.grpc.stub.StreamObserver<SB.grpc.Lights.APIResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getSwitchoutMethod(), responseObserver);
+    public void lightswitchall(SB.grpc.SwitchOffAllLights request,
+        io.grpc.stub.StreamObserver<SB.grpc.APISwitchOffAllLights> responseObserver) {
+      asyncUnimplementedUnaryCall(getLightswitchallMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            getSwitchMethod(),
+            getLightswitchMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                SB.grpc.Lights.SwitchRequest,
-                SB.grpc.Lights.APIResponse>(
-                  this, METHODID_SWITCH)))
+                SB.grpc.SwitchRequest,
+                SB.grpc.APILightsResponse>(
+                  this, METHODID_LIGHTSWITCH)))
           .addMethod(
-            getSwitchoutMethod(),
-            asyncUnaryCall(
+            getLightswitchallMethod(),
+            asyncServerStreamingCall(
               new MethodHandlers<
-                SB.grpc.Lights.Empty,
-                SB.grpc.Lights.APIResponse>(
-                  this, METHODID_SWITCHOUT)))
+                SB.grpc.SwitchOffAllLights,
+                SB.grpc.APISwitchOffAllLights>(
+                  this, METHODID_LIGHTSWITCHALL)))
           .build();
     }
   }
@@ -172,18 +172,18 @@ public final class lightsGrpc {
 
     /**
      */
-    public void switch_(SB.grpc.Lights.SwitchRequest request,
-        io.grpc.stub.StreamObserver<SB.grpc.Lights.APIResponse> responseObserver) {
+    public void lightswitch(SB.grpc.SwitchRequest request,
+        io.grpc.stub.StreamObserver<SB.grpc.APILightsResponse> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getSwitchMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getLightswitchMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void switchout(SB.grpc.Lights.Empty request,
-        io.grpc.stub.StreamObserver<SB.grpc.Lights.APIResponse> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getSwitchoutMethod(), getCallOptions()), request, responseObserver);
+    public void lightswitchall(SB.grpc.SwitchOffAllLights request,
+        io.grpc.stub.StreamObserver<SB.grpc.APISwitchOffAllLights> responseObserver) {
+      asyncServerStreamingCall(
+          getChannel().newCall(getLightswitchallMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -207,16 +207,17 @@ public final class lightsGrpc {
 
     /**
      */
-    public SB.grpc.Lights.APIResponse switch_(SB.grpc.Lights.SwitchRequest request) {
+    public SB.grpc.APILightsResponse lightswitch(SB.grpc.SwitchRequest request) {
       return blockingUnaryCall(
-          getChannel(), getSwitchMethod(), getCallOptions(), request);
+          getChannel(), getLightswitchMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public SB.grpc.Lights.APIResponse switchout(SB.grpc.Lights.Empty request) {
-      return blockingUnaryCall(
-          getChannel(), getSwitchoutMethod(), getCallOptions(), request);
+    public java.util.Iterator<SB.grpc.APISwitchOffAllLights> lightswitchall(
+        SB.grpc.SwitchOffAllLights request) {
+      return blockingServerStreamingCall(
+          getChannel(), getLightswitchallMethod(), getCallOptions(), request);
     }
   }
 
@@ -240,23 +241,15 @@ public final class lightsGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<SB.grpc.Lights.APIResponse> switch_(
-        SB.grpc.Lights.SwitchRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<SB.grpc.APILightsResponse> lightswitch(
+        SB.grpc.SwitchRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getSwitchMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<SB.grpc.Lights.APIResponse> switchout(
-        SB.grpc.Lights.Empty request) {
-      return futureUnaryCall(
-          getChannel().newCall(getSwitchoutMethod(), getCallOptions()), request);
+          getChannel().newCall(getLightswitchMethod(), getCallOptions()), request);
     }
   }
 
-  private static final int METHODID_SWITCH = 0;
-  private static final int METHODID_SWITCHOUT = 1;
+  private static final int METHODID_LIGHTSWITCH = 0;
+  private static final int METHODID_LIGHTSWITCHALL = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -275,13 +268,13 @@ public final class lightsGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_SWITCH:
-          serviceImpl.switch_((SB.grpc.Lights.SwitchRequest) request,
-              (io.grpc.stub.StreamObserver<SB.grpc.Lights.APIResponse>) responseObserver);
+        case METHODID_LIGHTSWITCH:
+          serviceImpl.lightswitch((SB.grpc.SwitchRequest) request,
+              (io.grpc.stub.StreamObserver<SB.grpc.APILightsResponse>) responseObserver);
           break;
-        case METHODID_SWITCHOUT:
-          serviceImpl.switchout((SB.grpc.Lights.Empty) request,
-              (io.grpc.stub.StreamObserver<SB.grpc.Lights.APIResponse>) responseObserver);
+        case METHODID_LIGHTSWITCHALL:
+          serviceImpl.lightswitchall((SB.grpc.SwitchOffAllLights) request,
+              (io.grpc.stub.StreamObserver<SB.grpc.APISwitchOffAllLights>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -344,8 +337,8 @@ public final class lightsGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new lightsFileDescriptorSupplier())
-              .addMethod(getSwitchMethod())
-              .addMethod(getSwitchoutMethod())
+              .addMethod(getLightswitchMethod())
+              .addMethod(getLightswitchallMethod())
               .build();
         }
       }

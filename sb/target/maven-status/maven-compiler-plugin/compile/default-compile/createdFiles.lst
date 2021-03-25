@@ -20,7 +20,6 @@ SB\grpc\roombaGrpc$roombaStub.class
 SB\grpc\lightsGrpc$lightsBlockingStub.class
 SB\grpc\Roomba.class
 SBServers\LightsServer.class
-lights\LightsService.class
 SB\grpc\Lights$SwitchRequest.class
 SB\grpc\Roomba$APIRoomResponseOrBuilder.class
 SB\grpc\Lights$Empty.class
@@ -48,7 +47,6 @@ SB\grpc\Roomba$REmpty$1.class
 SB\grpc\Roomba$REmptyOrBuilder.class
 SB\grpc\lightsGrpc$lightsImplBase.class
 SB\grpc\Roomba$RoombaRequest$Builder.class
-roomba\RoombaService.class
 SB\grpc\Roomba$1.class
 Roomba$1.class
 SB\grpc\Lights$APIResponse$Builder.class
