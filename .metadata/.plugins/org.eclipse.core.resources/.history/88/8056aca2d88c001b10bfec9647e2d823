@@ -1,0 +1,229 @@
+package SBServers;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.InetAddress;
+import java.util.Properties;
+
+import javax.jmdns.JmDNS;
+import javax.jmdns.ServiceInfo;
+
+import SB.grpc.APILightsResponse;
+import SB.grpc.SwitchRequest;
+import SB.grpc.lightsGrpc.lightsImplBase;
+
+import io.grpc.Server;
+import io.grpc.ServerBuilder;
+import io.grpc.stub.StreamObserver;
+
+
+public class LightsServer extends lightsImplBase
+{
+	// 0 is off, 1 is on
+	
+	
+	public static void main(String[] args)
+	{
+		
+		LightsServer ls = new LightsServer();
+		Properties lp = ls.getProperties();
+		ls.registerService(lp);
+		int lport = Integer.valueOf(lp.getProperty("service_port"));
+		
+		try 
+		{
+			System.out.println("Running 1");
+			Server server = ServerBuilder.forPort(lport).addService(ls).build().start();
+			System.out.println("Lights Server started, listening on " + lport);
+			server.awaitTermination();
+		} 
+		catch (IOException e) 
+		{
+			System.out.println("Running 2");
+			System.out.println("We have an input/output error: " + e.getMessage());
+			e.printStackTrace();
+		} 
+		catch (InterruptedException e) 
+		{
+			System.out.println("Running 3");
+			System.out.println("Server connection was interrupted: " + e.getMessage());
+			e.printStackTrace();
+		}
+	}
+	
+	private Properties getProperties() 
+	{
+		Properties lp = null;		
+		 try (InputStream input = new FileInputStream("src/main/resources/lights.properties")) 
+		 {
+			 System.out.println("Running 4");
+	            lp = new Properties();
+
+	            // load a properties file
+	            lp.load(input);
+
+	            // get the property value and print it out
+	            System.out.println("Lights properties ...");
+	            System.out.println("\t service_type: " + lp.getProperty("service_type"));
+	            System.out.println("\t service_name: " + lp.getProperty("service_name"));
+	            System.out.println("\t service_description: " + lp.getProperty("service_description"));
+		        System.out.println("\t service_port: " + lp.getProperty("service_port"));
+
+	     } 
+		 catch (IOException ex) 
+		 {
+			 System.out.println("Running 5");
+	         ex.printStackTrace();
+	         System.out.println("We have an input/output error: " + ex.getMessage());
+	     }
+		 return lp;
+	}
+	
+	private void registerService(Properties lp) 
+	{
+		
+		 try 
+		 {
+			 System.out.println("Running 6");
+	            // Create a JmDNS instance
+	            JmDNS jmdns = JmDNS.create(InetAddress.getLocalHost());
+	            
+	            String service_type = lp.getProperty("service_type");
+	            String service_name = lp.getProperty("service_name");
+	           // int service_port = 1234;
+	            int service_port = Integer.valueOf( lp.getProperty("service_port"));
+
+	            String service_description_properties = lp.getProperty("service_description");
+	            
+	            // Register a service
+	            ServiceInfo serviceInfo = ServiceInfo.create(service_type, service_name, service_port, service_description_properties);
+	            jmdns.registerService(serviceInfo);
+	            
+	            System.out.printf("registrering service with type %s and name %s \n", service_type, service_name);
+	            
+	            // Wait a bit
+	            Thread.sleep(1000);
+
+	            // Unregister all services
+	            //jmdns.unregisterAllServices();
+	     } 
+		 catch (IOException e) 
+		 {
+			 System.out.println("Running 7");
+	            System.out.println("We have an input/output error: " + e.getMessage());
+	     } 
+		 catch (InterruptedException e) 
+		 {
+			 System.out.println("Running 8");
+			 	System.out.println("Server connection was interrupted: ");
+				e.printStackTrace();
+		 }
+	}
+	
+	public void lightswitch(SwitchRequest switchrequest, StreamObserver<APILightsResponse> responseObserver)
+	{
+		int hallwaylight = 0; // 0
+		int kitchenlight = 0;// 1
+		int wclight = 0;// 2
+		int livingroomlight = 0;// 3
+		int bedroom1light = 0;// 4
+		int bedroom2light = 0;// 5
+		
+		System.out.println("hallwaylight " + hallwaylight);
+		System.out.println("kitchenlight " + kitchenlight);
+		System.out.println("wclight " + wclight);
+		System.out.println("livingroomlight " + livingroomlight);
+		System.out.println("bedroom1light " + bedroom1light);
+		System.out.println("bedroom2light " + bedroom2light);
+		
+		System.out.println("Receiving info from the client - Lighst status " + switchrequest.getLightsstatus() + " , " + switchrequest.getLightsroom());
+		
+		int value = 0;
+		int value2 = 1;
+		//String msg= "ok " + switchrequest.getRoom().name() + " result ";
+		String msg = "";
+
+		if(switchrequest.getLightsroom() == 0)
+		{
+			System.out.println("1 - kitchenlight " + kitchenlight);
+			if((hallwaylight == switchrequest.getLightsstatus())&&(value == switchrequest.getLightsstatus()))
+				hallwaylight = value2;
+			else if((hallwaylight == switchrequest.getLightsstatus())&&(value2 == switchrequest.getLightsstatus()))
+				hallwaylight = value;
+		}
+		else if(switchrequest.getLightsroom() == 1)
+		{
+			System.out.println("2 - kitchenlight " + kitchenlight);
+			if(kitchenlight == switchrequest.getLightsstatus())
+			{
+				if(value == switchrequest.getLightsstatus())
+				{
+					System.out.println("3 - kitchenlight " + kitchenlight);
+					kitchenlight = value2;
+				}
+				else if(value2 == switchrequest.getLightsstatus())
+				{
+					System.out.println("4 - kitchenlight " + kitchenlight);
+					kitchenlight = value;
+				}
+			}
+			else if(kitchenlight != switchrequest.getLightsstatus())
+			{
+				System.out.println("5 - kitchenlight " + kitchenlight);
+				if(value == switchrequest.getLightsstatus())
+				{
+					System.out.println("6 - kitchenlight " + kitchenlight);
+					kitchenlight = value2;
+				}
+				else if(value2 == switchrequest.getLightsstatus())
+				{
+					System.out.println("7 - kitchenlight " + kitchenlight);
+					kitchenlight = value;
+					System.out.println("8 - kitchenlight " + kitchenlight);
+				}
+			}
+		}
+		else if(switchrequest.getLightsroom() == 2)
+			if((wclight == switchrequest.getLightsstatus())&&(value == switchrequest.getLightsstatus()))
+				wclight = value2;
+			else if((wclight == switchrequest.getLightsstatus())&&(value2 == switchrequest.getLightsstatus()))
+				wclight = value;
+		else if(switchrequest.getLightsroom() == 3)
+			if((livingroomlight == switchrequest.getLightsstatus())&&(value == switchrequest.getLightsstatus()))
+				livingroomlight = value2;
+			else if((livingroomlight == switchrequest.getLightsstatus())&&(value2 == switchrequest.getLightsstatus()))
+				livingroomlight = value;
+		else if(switchrequest.getLightsroom() == 4)
+			if((bedroom1light == switchrequest.getLightsstatus())&&(value == switchrequest.getLightsstatus()))
+				bedroom1light = value2;
+			else if((bedroom1light == switchrequest.getLightsstatus())&&(value2 == switchrequest.getLightsstatus()))
+				bedroom1light = value;
+		else if(switchrequest.getLightsroom() == 5)
+			if((bedroom2light == switchrequest.getLightsstatus())&&(value == switchrequest.getLightsstatus()))
+				bedroom2light = value2;
+			else if((bedroom2light == switchrequest.getLightsstatus())&&(value2 == switchrequest.getLightsstatus()))
+				bedroom2light = value;
+		else {
+			//value = Float.NaN;
+			//msg = "no supported/implemented operation";
+			System.out.println("No such room");
+		}
+		
+		
+		
+		APILightsResponse reply = APILightsResponse.newBuilder().setResponsemessage("Request received and processed.").build();
+		responseObserver.onNext(reply);
+		responseObserver.onCompleted();
+		
+		System.out.println("hallwaylight " + hallwaylight);
+		System.out.println("kitchenlight " + kitchenlight);
+		System.out.println("wclight " + wclight);
+		System.out.println("livingroomlight " + livingroomlight);
+		System.out.println("bedroom1light " + bedroom1light);
+		System.out.println("bedroom2light " + bedroom2light);
+	}
+	
+	
+
+}

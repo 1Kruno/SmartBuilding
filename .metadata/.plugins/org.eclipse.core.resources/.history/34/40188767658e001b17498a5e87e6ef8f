@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "SB.grpc";
+option java_outer_classname = "Roomba";
+
+service roomba
+{
+	rpc clean(stream CleanSelectedRooms) returns(stream APICleanSelectedRoomsResponse);
+	rpc cleanall(stream CleanAllRooms) returns(APICleanAllRoomsResponse);
+}
+
+message CleanSelectedRooms
+{
+	string room = 1;
+	int32 roomnumber = 2;
+}
+
+message APICleanSelectedRoomsResponse
+{
+	string room = 1;
+	int32 roomnumber = 2;
+	int32 roompercent = 3;
+}
+
+message CleanAllRooms
+{
+	string room = 1;
+	int32 roomnumber = 2;
+}
+
+message APICleanAllRoomsResponse
+{
+	string responsemessage = 1;
+}

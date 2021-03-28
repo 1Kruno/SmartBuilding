@@ -1,0 +1,4 @@
+aservice_type=_ablinds._tcp.local.
+aservice_name=simple_ablinds
+aservice_description=service for controlling blinds operation
+aservice_port=9080

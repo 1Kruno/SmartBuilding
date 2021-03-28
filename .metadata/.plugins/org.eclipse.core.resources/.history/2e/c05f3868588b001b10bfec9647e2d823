@@ -1,0 +1,108 @@
+package SBServers;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.InetAddress;
+import java.util.Properties;
+
+import javax.jmdns.JmDNS;
+import javax.jmdns.ServiceInfo;
+
+import SB.grpc.lightsGrpc.lightsImplBase;
+import io.grpc.Server;
+import io.grpc.ServerBuilder;
+
+
+public class LightsServer extends lightsImplBase
+{
+
+	public static void main(String[] args)
+	{
+		LightsServer ls = new LightsServer();
+		Properties lp = ls.getProperties();
+		ls.registerService(lp);
+		int lport = Integer.valueOf(lp.getProperty("service_port"));
+		
+		try 
+		{
+			Server server = ServerBuilder.forPort(lport).addService(ls).build().start();
+			System.out.println("Math Server started, listening on " + lp);
+			server.awaitTermination();
+		} 
+		catch (IOException e) 
+		{
+			e.printStackTrace();
+		} 
+		catch (InterruptedException e) 
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	private Properties getProperties() 
+	{
+		Properties lp = null;		
+		 try (InputStream input = new FileInputStream("src/main/resources/lights.properties")) 
+		 {
+	            lp = new Properties();
+
+	            // load a properties file
+	            lp.load(input);
+
+	            // get the property value and print it out
+	            System.out.println("Lights properties ...");
+	            System.out.println("\t service_type: " + lp.getProperty("service_type"));
+	            System.out.println("\t service_name: " +lp.getProperty("service_name"));
+	            System.out.println("\t service_description: " +lp.getProperty("service_description"));
+		        System.out.println("\t service_port: " +lp.getProperty("service_port"));
+
+	     } 
+		 catch (IOException ex) 
+		 {
+	         ex.printStackTrace();
+	     }
+	
+		 return lp;
+	}
+	
+	private  void registerService(Properties lp) 
+	{
+		
+		 try 
+		 {
+	            // Create a JmDNS instance
+	            JmDNS jmdns = JmDNS.create(InetAddress.getLocalHost());
+	            
+	            String service_type = lp.getProperty("service_type") ;//"_http._tcp.local.";
+	            String service_name = lp.getProperty("service_name")  ;// "example";
+	           // int service_port = 1234;
+	            int service_port = Integer.valueOf( lp.getProperty("service_port") );// #.50051;
+
+	            
+	            String service_description_properties = lp.getProperty("service_description")  ;//"path=index.html";
+	            
+	            // Register a service
+	            ServiceInfo serviceInfo = ServiceInfo.create(service_type, service_name, service_port, service_description_properties);
+	            jmdns.registerService(serviceInfo);
+	            
+	            System.out.printf("registrering service with type %s and name %s \n", service_type, service_name);
+	            
+	            // Wait a bit
+	            Thread.sleep(1000);
+
+	            // Unregister all services
+	            //jmdns.unregisterAllServices();
+
+	     } 
+		 catch (IOException e) 
+		 {
+	            System.out.println(e.getMessage());
+	     } 
+		 catch (InterruptedException e) 
+		 {
+				e.printStackTrace();
+		 }
+	}
+
+}

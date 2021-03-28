@@ -1,0 +1,38 @@
+package client;
+
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
+
+import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.awt.event.ActionEvent;
+
+public interface ClientGUI 
+{
+	public static void main(String[] args)
+	{
+		
+	}
+	
+	public ClientGUI()
+	{
+		
+	}
+	
+	private void discoverLightsService(String service_type)
+	{
+		
+	}
+	
+	private void discoverRoombaService(String service_type)
+	{
+		
+	}
+	
+	private void discoverBlindsService(String service_type)
+	{
+		
+	}
+}

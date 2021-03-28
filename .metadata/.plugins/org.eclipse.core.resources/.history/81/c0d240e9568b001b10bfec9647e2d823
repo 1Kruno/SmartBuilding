@@ -1,0 +1,17 @@
+package SBServers;
+
+import java.io.IOException;
+
+import io.grpc.Server;
+import io.grpc.ServerBuilder;
+
+
+public class LightsServer 
+{
+
+	public static void main(String[] args) throws IOException, InterruptedException 
+	{
+		
+	}
+
+}

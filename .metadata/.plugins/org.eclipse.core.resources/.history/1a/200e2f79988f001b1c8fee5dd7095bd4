@@ -1,0 +1,388 @@
+package SBServers;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.InetAddress;
+import java.util.ArrayList;
+import java.util.Properties;
+
+import javax.jmdns.JmDNS;
+import javax.jmdns.ServiceInfo;
+
+
+import io.grpc.Server;
+import io.grpc.ServerBuilder;
+import io.grpc.stub.StreamObserver;
+
+public class BlindsServer
+{
+	// 0 is off, 1 is on
+		public static int hallwayblinds = 0; // 0
+		public static int kitchenblinds = 0;// 1
+		public static int wcblinds = 0;// 2
+		public static int livingroomblinds = 0;// 3
+		public static int bedroom1blinds = 0;// 4
+		public static int bedroom2blinds = 0;// 5
+
+	public static void main(String[] args) 
+	{
+		/*
+		BlindsServer bs = new BlindsServer();
+		Properties lp = bs.getProperties();
+		bs.registerService(lp);
+		int bport = Integer.valueOf(lp.getProperty("bservice_port"));
+		
+		try 
+		{
+			Server server = ServerBuilder.forPort(bport).addService(bs).build().start();
+			System.out.println("Blinds Server started, listening on " + bport);
+			server.awaitTermination();
+		} 
+		catch (IOException e) 
+		{
+			System.out.println("We have an input/output error: " + e.getMessage());
+			e.printStackTrace();
+		} 
+		catch (InterruptedException e) 
+		{
+			System.out.println("Server connection was interrupted: " + e.getMessage());
+			e.printStackTrace();
+		}
+		*/
+	}
+	/*
+	private Properties getProperties() 
+	{
+		Properties lp = null;		
+		 try (InputStream input = new FileInputStream("src/main/resources/blinds.properties")) 
+		 {
+	            lp = new Properties();
+
+	            // load a properties file
+	            lp.load(input);
+
+	            // get the property value and print it out
+	            System.out.println("Blinds properties ...");
+	            System.out.println("\t service_type: " + lp.getProperty("bservice_type"));
+	            System.out.println("\t service_name: " + lp.getProperty("bservice_name"));
+	            System.out.println("\t service_description: " + lp.getProperty("bservice_description"));
+		        System.out.println("\t service_port: " + lp.getProperty("bservice_port"));
+
+	     } 
+		 catch (IOException ex) 
+		 {
+	         ex.printStackTrace();
+	         System.out.println("We have an input/output error: " + ex.getMessage());
+	     }
+		 return lp;
+	}
+	
+	private void registerService(Properties lp) 
+	{
+		 try 
+		 {
+	            JmDNS jmdns = JmDNS.create(InetAddress.getLocalHost());
+	            
+	            String service_type = lp.getProperty("bservice_type");
+	            String service_name = lp.getProperty("bservice_name");
+	            int service_port = Integer.valueOf( lp.getProperty("bservice_port"));
+
+	            String service_description_properties = lp.getProperty("bservice_description");
+	            
+	            ServiceInfo serviceInfo = ServiceInfo.create(service_type, service_name, service_port, service_description_properties);
+	            jmdns.registerService(serviceInfo);
+	            
+	            System.out.printf("Registrering service with type %s and name %s \n", service_type, service_name);
+	            
+	            Thread.sleep(1000);
+	            //jmdns.unregisterAllServices();
+	     } 
+		 catch (IOException e) 
+		 {
+	            System.out.println("We have an input/output error: " + e.getMessage());
+	     } 
+		 catch (InterruptedException e) 
+		 {
+			 	System.out.println("Server connection was interrupted: ");
+				e.printStackTrace();
+		 }
+	}
+	
+	public void blindsswitch(BlindsSwitchRequest switchrequest, StreamObserver<APIBlindsResponse> responseObserver)
+	{
+		
+		System.out.println("hallwayblinds " + hallwayblinds);
+		System.out.println("kitchenblinds " + kitchenblinds);
+		System.out.println("wcblinds" + wcblinds);
+		System.out.println("livingroomblinds " + livingroomblinds);
+		System.out.println("bedroom1blinds " + bedroom1blinds);
+		System.out.println("bedroom2blinds " + bedroom2blinds);
+		
+		System.out.println("Receiving info from the client - Blinds status " + switchrequest.getBlindsstatus() + " , " + switchrequest.getBlindsroom());
+		
+		int value = 0;
+		int value2 = 1;
+		String msg = "";
+		String turned = "";
+
+		if(switchrequest.getBlindsroom() == 0)
+		{
+			if(hallwayblinds == switchrequest.getBlindsstatus())
+			{
+				if(value == switchrequest.getBlindsstatus())
+				{
+					msg = "Blinds in the hallway are ";
+					turned = "shut.";
+					hallwayblinds = value2;
+				}
+				else if(value2 == switchrequest.getBlindsstatus())
+				{
+					msg = "The light in the hallway is ";
+					turned = "opened.";
+					hallwayblinds = value;
+				}
+			}
+			else if(hallwayblinds != switchrequest.getBlindsstatus())
+			{
+				if(value == switchrequest.getBlindsstatus())
+				{
+					msg = "The light in the hallway is ";
+					turned = "opened.";
+					hallwayblinds = value;
+				}
+				else if(value2 == switchrequest.getBlindsstatus())
+				{
+					msg = "The light in the hallway is ";
+					turned = "shut.";
+					hallwayblinds = value2;
+				}
+			}
+		}
+		else if(switchrequest.getBlindsroom() == 1)
+		{
+			if(kitchenblinds == switchrequest.getBlindsstatus())
+			{
+				if(value == switchrequest.getBlindsstatus())
+				{
+					msg = "The light in the kitchen is ";
+					turned = "shut.";
+					kitchenblinds = value2;
+				}
+				else if(value2 == switchrequest.getBlindsstatus())
+				{
+					msg = "The light in the kitchen is ";
+					turned = "opened.";
+					kitchenblinds = value;
+				}
+			}
+			else if(kitchenblinds != switchrequest.getBlindsstatus())
+			{
+				if(value == switchrequest.getBlindsstatus())
+				{
+					msg = "The light in the kitchen is ";
+					turned = "opened.";
+					kitchenblinds = value;
+				}
+				else if(value2 == switchrequest.getBlindsstatus())
+				{
+					msg = "The light in the kitchen is ";
+					turned = "shut.";
+					kitchenblinds = value2;
+				}
+			}
+		}
+		else if(switchrequest.getBlindsroom() == 2)
+		{
+			if(wcblinds == switchrequest.getBlindsstatus())
+			{
+				if(value == switchrequest.getBlindsstatus())
+				{
+					msg = "The light in the bathroom is ";
+					turned = "shut.";
+					wcblinds = value2;
+				}
+				else if(value2 == switchrequest.getBlindsstatus())
+				{
+					msg = "The light in the bathroom is ";
+					turned = "opened.";
+					wcblinds = value;
+				}
+			}
+			else if(wcblinds != switchrequest.getBlindsstatus())
+			{
+				if(value == switchrequest.getBlindsstatus())
+				{
+					msg = "The light in the bathroom is ";
+					turned = "opened.";
+					wcblinds = value;
+				}
+				else if(value2 == switchrequest.getBlindsstatus())
+				{
+					msg = "The light in the bathroom is ";
+					turned = "shut.";
+					wcblinds = value2;
+				}
+			}
+		}
+		else if(switchrequest.getBlindsroom() == 3)
+		{
+			if(livingroomblinds == switchrequest.getBlindsstatus())
+			{
+				if(value == switchrequest.getBlindsstatus())
+				{
+					msg = "The light in the living room is ";
+					turned = "shut.";
+					livingroomblinds = value2;
+				}
+				else if(value2 == switchrequest.getBlindsstatus())
+				{
+					msg = "The light in the living room is ";
+					turned = "opened.";
+					livingroomblinds = value;
+				}
+			}
+			else if(livingroomblinds != switchrequest.getBlindsstatus())
+			{
+				if(value == switchrequest.getBlindsstatus())
+				{
+					msg = "The light in the living room is ";
+					turned = "opened.";
+					livingroomblinds = value;
+				}
+				else if(value2 == switchrequest.getBlindsstatus())
+				{
+					msg = "The light in the living room is ";
+					turned = "shut.";
+					livingroomblinds = value2;
+				}
+			}
+		}
+		else if(switchrequest.getBlindsroom() == 4)
+		{
+			if(bedroom1blinds == switchrequest.getBlindsstatus())
+			{
+				if(value == switchrequest.getBlindsstatus())
+				{
+					msg = "The light in the bedroomroom 1 is ";
+					turned = "shut.";
+					bedroom1blinds = value2;
+				}
+				else if(value2 == switchrequest.getBlindsstatus())
+				{
+					msg = "The light in the bedroomroom 1 is ";
+					turned = "opened.";
+					bedroom1blinds = value;
+				}
+			}
+			else if(bedroom1blinds != switchrequest.getBlindsstatus())
+			{
+				if(value == switchrequest.getBlindsstatus())
+				{
+					msg = "The light in the bedroomroom 1 is ";
+					turned = "openedf.";
+					bedroom1blinds = value;
+				}
+				else if(value2 == switchrequest.getBlindsstatus())
+				{
+					msg = "The light in the bedroomroom 1 is ";
+					turned = "shut.";
+					bedroom1blinds = value2;
+				}
+			}
+		}
+		else if(switchrequest.getBlindsroom() == 5)
+		{
+			if(bedroom2blinds == switchrequest.getBlindsstatus())
+			{
+				if(value == switchrequest.getBlindsstatus())
+				{
+					msg = "The light in the bedroomroom 2 is ";
+					turned = "shut.";
+					bedroom2blinds = value2;
+				}
+				else if(value2 == switchrequest.getBlindsstatus())
+				{
+					msg = "The light in the bedroomroom 2 is ";
+					turned = "opened.";
+					bedroom2blinds = value;
+				}
+			}
+			else if(bedroom2blinds != switchrequest.getBlindsstatus())
+			{
+				if(value == switchrequest.getBlindsstatus())
+				{
+					msg = "The light in the bedroomroom 2 is ";
+					turned = "opened.";
+					bedroom2blinds = value;
+				}
+				else if(value2 == switchrequest.getBlindsstatus())
+				{
+					msg = "The light in the bedroomroom 2 is ";
+					turned = "shut.";
+					bedroom2blinds = value2;
+				}
+			}
+		}
+		else 
+		{
+			System.out.println("No such room");
+		}
+		
+		APIBlindsResponse reply = APIBlindsResponse.newBuilder().setResponsemessage(msg + turned).setResponsecode("SUCCESS").build();
+		responseObserver.onNext(reply);
+		responseObserver.onCompleted();
+		
+		System.out.println("hallwayblinds " + hallwayblinds);
+		System.out.println("kitchenblinds " + kitchenblinds);
+		System.out.println("wcblinds " + wcblinds);
+		System.out.println("livingroomblinds " + livingroomblinds);
+		System.out.println("bedroom1blinds " + bedroom1blinds);
+		System.out.println("bedroom2blinds " + bedroom2blinds);
+	}
+	
+	public void blindsswitchall(ShutAllBlinds request, StreamObserver<APIShutAllBlinds> responseObserver)
+	{
+		if(request.getShutAll().contentEquals("toall"))
+		{
+			System.out.println("Server received request to shut all blinds: ");
+			System.out.println(request.getShutAll());
+		
+			String place = "";
+			String hallway = "hallway";
+			String kitchen = "kitchen";
+			String bathroom = "bathroom";
+			String livingroom = "living room";
+			String bedroom1 = "bedroom 1";
+			String bedroom2 = "bedroom 2";
+			
+			hallwayblinds = 0; 
+			kitchenblinds = 0;
+			wcblinds = 0;
+			livingroomblinds = 0;
+			bedroom1blinds = 0;
+			bedroom2blinds = 0;
+			
+			ArrayList <String> rooms = new ArrayList<>();
+			rooms.add(hallway);
+			rooms.add(kitchen);
+			rooms.add(bathroom);
+			rooms.add(livingroom);
+			rooms.add(bedroom1);
+			rooms.add(bedroom2);
+			
+			for(int i=0; i<rooms.size();i++)
+			{
+				place = rooms.get(i);
+				APIShutAllBlinds reply = APIShutAllBlinds.newBuilder().setShutAllResponse("Blinds in the " + place + " are shut.").build();
+				responseObserver.onNext(reply);
+			}
+				responseObserver.onCompleted();
+		}
+		else
+		{
+			System.out.println("The request is not valid");
+		}
+	}
+	*/
+}

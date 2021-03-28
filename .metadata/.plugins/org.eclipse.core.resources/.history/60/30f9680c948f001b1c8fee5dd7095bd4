@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "SB.grpc";
+option java_outer_classname = "ABlinds";
+
+service ablinds
+{
+	rpc ablindsswitch(ABlindsSwitchRequest) returns(APIABlindsResponse);
+	rpc ablindsswitchall(SwitchOffAllABlinds) returns(stream ablindsswitchOffAllResponse);
+}
+
+message ABlindsSwitchRequest
+{
+	int32 ablindsstatus = 1;
+	int32 ablindssroom = 2;
+}
+
+message APIABlindsResponse
+{
+	string ablindsresponsemessage = 1;
+	string ablindsresponsecode = 2;
+}
+
+message SwitchOffAllABlinds
+{
+	string ablindsswitchOffAll = 1;
+}
+
+message APISwitchOffAllABlinds
+{
+	string ablindsswitchOffAllResponse = 1;
+}
+

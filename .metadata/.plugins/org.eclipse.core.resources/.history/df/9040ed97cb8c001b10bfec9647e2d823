@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "SB.grpc";
+option java_outer_classname = "Lights";
+
+service lights
+{
+	rpc lightswitch(SwitchRequest) returns(APILightsResponse);
+	rpc switchout(Empty) returns(APILightsResponse);
+}
+
+message SwitchRequest
+{
+	string lightsstatus = 1;
+	string lightsroom = 2;
+	
+	enum Room
+	{
+		HALLWAYLIGHT = 0;
+		KITCHENLIGHT = 1;
+		WCLIGHT = 2;
+		LIVINGROOMLIGHT = 3;
+		BEDROOM1LIGHT = 4;
+		BEDROOM2LIGHT = 5;
+	}
+	Room room = 5;
+}
+
+message APILightsResponse
+{
+	string responsemessage = 1;
+	int32 responsecode = 2;
+}
+
+
+message Empty
+{
+}

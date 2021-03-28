@@ -1,0 +1,29 @@
+package client;
+
+public interface ClientGUI 
+{
+	public static void main(String[] args)
+	{
+		
+	}
+	
+	public ClientGUI()
+	{
+		
+	}
+	
+	private void discoverLightsService(String service_type)
+	{
+		
+	}
+	
+	private void discoverRoombaService(String service_type)
+	{
+		
+	}
+	
+	private void discoverBlindsService(String service_type)
+	{
+		
+	}
+}

@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "SB.grpc";
+option java_outer_classname = "Blinds";
+
+service blinds
+{
+	rpc blindsswitch(BlindsSwitchRequest) returns(APIBlindsResponse);
+	rpc lightswitchall(ShutfAllBlinds) returns(stream APIShutfAllBlinds);
+}
+
+message BlindsSwitchRequest
+{
+	int32 blindsstatus = 1;
+	int32 blindsroom = 2;
+}
+
+message APIBlindsResponse
+{
+	string responsemessage = 1;
+	string responsecode = 2;
+}
+
+message ShutfAllBlinds
+{
+	string shutAll = 1;
+}
+
+message APIShutfAllBlinds
+{
+	string shutAllResponse = 1;
+}

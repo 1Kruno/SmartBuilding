@@ -1,0 +1,4 @@
+cservice_type=_curtians._tcp.local.
+cservice_name=simple_curtains
+cservice_description=service for controlling curtains
+cservice_port=9080

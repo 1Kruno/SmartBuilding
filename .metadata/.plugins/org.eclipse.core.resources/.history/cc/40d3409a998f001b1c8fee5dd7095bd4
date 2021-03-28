@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "SB.grpc";
+option java_outer_classname = "Blinds";
+
+service alarm
+{
+	rpc blindscont(BlindsRequest) returns(APIBlindsResponse);
+	rpc blindscontall(BlindsAllRequest) returns(stream APIBlindsAllResponse);
+}
+
+message BlindsRequest
+{
+	int32 broomnumber = 1;
+	int32 broomname = 2;
+}
+
+message APIBlindsResponse
+{
+	string blindressmessage = 1;
+	string blindsrescode = 2;
+}
+
+message BlindsAllRequest
+{
+	string balloffmessage = 1;
+}
+
+message APIBlindsAllResponse
+{
+	string balloffresponse = 1;
+}

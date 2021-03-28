@@ -1,0 +1,4 @@
+service_type=_blinds._tcp.local.
+service_name=simple_blinds
+service_description=service for controlling blinds
+service_port=50052

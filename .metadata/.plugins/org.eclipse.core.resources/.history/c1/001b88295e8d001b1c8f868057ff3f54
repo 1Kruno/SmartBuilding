@@ -1,0 +1,4 @@
+r_service_type=_roomba._tcp.local.
+r_service_name=simple_roomba
+r_service_description=service for controlling roomba
+r_service_port=50051

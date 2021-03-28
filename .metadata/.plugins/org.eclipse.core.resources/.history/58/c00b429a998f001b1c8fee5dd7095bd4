@@ -1,0 +1,4 @@
+bservice_type=_blinds._tcp.local.
+bservice_name=simple_blinds
+bservice_description=service for controlling blinds
+bservice_port=9080

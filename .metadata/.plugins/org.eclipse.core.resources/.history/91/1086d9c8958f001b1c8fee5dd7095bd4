@@ -1,0 +1,348 @@
+package SB.grpc;
+
+import static io.grpc.MethodDescriptor.generateFullMethodName;
+import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncUnaryCall;
+import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
+import static io.grpc.stub.ClientCalls.blockingUnaryCall;
+import static io.grpc.stub.ClientCalls.futureUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
+
+/**
+ */
+@javax.annotation.Generated(
+    value = "by gRPC proto compiler (version 1.15.0)",
+    comments = "Source: ablinds.proto")
+public final class ablindsGrpc {
+
+  private ablindsGrpc() {}
+
+  public static final String SERVICE_NAME = "ablinds";
+
+  // Static method descriptors that strictly reflect the proto.
+  private static volatile io.grpc.MethodDescriptor<SB.grpc.ABlindsSwitchRequest,
+      SB.grpc.APIABlindsResponse> getAblindsswitchMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ablindsswitch",
+      requestType = SB.grpc.ABlindsSwitchRequest.class,
+      responseType = SB.grpc.APIABlindsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<SB.grpc.ABlindsSwitchRequest,
+      SB.grpc.APIABlindsResponse> getAblindsswitchMethod() {
+    io.grpc.MethodDescriptor<SB.grpc.ABlindsSwitchRequest, SB.grpc.APIABlindsResponse> getAblindsswitchMethod;
+    if ((getAblindsswitchMethod = ablindsGrpc.getAblindsswitchMethod) == null) {
+      synchronized (ablindsGrpc.class) {
+        if ((getAblindsswitchMethod = ablindsGrpc.getAblindsswitchMethod) == null) {
+          ablindsGrpc.getAblindsswitchMethod = getAblindsswitchMethod = 
+              io.grpc.MethodDescriptor.<SB.grpc.ABlindsSwitchRequest, SB.grpc.APIABlindsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "ablinds", "ablindsswitch"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  SB.grpc.ABlindsSwitchRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  SB.grpc.APIABlindsResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new ablindsMethodDescriptorSupplier("ablindsswitch"))
+                  .build();
+          }
+        }
+     }
+     return getAblindsswitchMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<SB.grpc.SwitchOffAllABlinds,
+      SB.grpc.APISwitchOffAllABlinds> getAblindsswitchallMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ablindsswitchall",
+      requestType = SB.grpc.SwitchOffAllABlinds.class,
+      responseType = SB.grpc.APISwitchOffAllABlinds.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<SB.grpc.SwitchOffAllABlinds,
+      SB.grpc.APISwitchOffAllABlinds> getAblindsswitchallMethod() {
+    io.grpc.MethodDescriptor<SB.grpc.SwitchOffAllABlinds, SB.grpc.APISwitchOffAllABlinds> getAblindsswitchallMethod;
+    if ((getAblindsswitchallMethod = ablindsGrpc.getAblindsswitchallMethod) == null) {
+      synchronized (ablindsGrpc.class) {
+        if ((getAblindsswitchallMethod = ablindsGrpc.getAblindsswitchallMethod) == null) {
+          ablindsGrpc.getAblindsswitchallMethod = getAblindsswitchallMethod = 
+              io.grpc.MethodDescriptor.<SB.grpc.SwitchOffAllABlinds, SB.grpc.APISwitchOffAllABlinds>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "ablinds", "ablindsswitchall"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  SB.grpc.SwitchOffAllABlinds.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  SB.grpc.APISwitchOffAllABlinds.getDefaultInstance()))
+                  .setSchemaDescriptor(new ablindsMethodDescriptorSupplier("ablindsswitchall"))
+                  .build();
+          }
+        }
+     }
+     return getAblindsswitchallMethod;
+  }
+
+  /**
+   * Creates a new async stub that supports all call types for the service
+   */
+  public static ablindsStub newStub(io.grpc.Channel channel) {
+    return new ablindsStub(channel);
+  }
+
+  /**
+   * Creates a new blocking-style stub that supports unary and streaming output calls on the service
+   */
+  public static ablindsBlockingStub newBlockingStub(
+      io.grpc.Channel channel) {
+    return new ablindsBlockingStub(channel);
+  }
+
+  /**
+   * Creates a new ListenableFuture-style stub that supports unary calls on the service
+   */
+  public static ablindsFutureStub newFutureStub(
+      io.grpc.Channel channel) {
+    return new ablindsFutureStub(channel);
+  }
+
+  /**
+   */
+  public static abstract class ablindsImplBase implements io.grpc.BindableService {
+
+    /**
+     */
+    public void ablindsswitch(SB.grpc.ABlindsSwitchRequest request,
+        io.grpc.stub.StreamObserver<SB.grpc.APIABlindsResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getAblindsswitchMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void ablindsswitchall(SB.grpc.SwitchOffAllABlinds request,
+        io.grpc.stub.StreamObserver<SB.grpc.APISwitchOffAllABlinds> responseObserver) {
+      asyncUnimplementedUnaryCall(getAblindsswitchallMethod(), responseObserver);
+    }
+
+    @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
+      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+          .addMethod(
+            getAblindsswitchMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                SB.grpc.ABlindsSwitchRequest,
+                SB.grpc.APIABlindsResponse>(
+                  this, METHODID_ABLINDSSWITCH)))
+          .addMethod(
+            getAblindsswitchallMethod(),
+            asyncServerStreamingCall(
+              new MethodHandlers<
+                SB.grpc.SwitchOffAllABlinds,
+                SB.grpc.APISwitchOffAllABlinds>(
+                  this, METHODID_ABLINDSSWITCHALL)))
+          .build();
+    }
+  }
+
+  /**
+   */
+  public static final class ablindsStub extends io.grpc.stub.AbstractStub<ablindsStub> {
+    private ablindsStub(io.grpc.Channel channel) {
+      super(channel);
+    }
+
+    private ablindsStub(io.grpc.Channel channel,
+        io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ablindsStub build(io.grpc.Channel channel,
+        io.grpc.CallOptions callOptions) {
+      return new ablindsStub(channel, callOptions);
+    }
+
+    /**
+     */
+    public void ablindsswitch(SB.grpc.ABlindsSwitchRequest request,
+        io.grpc.stub.StreamObserver<SB.grpc.APIABlindsResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getAblindsswitchMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void ablindsswitchall(SB.grpc.SwitchOffAllABlinds request,
+        io.grpc.stub.StreamObserver<SB.grpc.APISwitchOffAllABlinds> responseObserver) {
+      asyncServerStreamingCall(
+          getChannel().newCall(getAblindsswitchallMethod(), getCallOptions()), request, responseObserver);
+    }
+  }
+
+  /**
+   */
+  public static final class ablindsBlockingStub extends io.grpc.stub.AbstractStub<ablindsBlockingStub> {
+    private ablindsBlockingStub(io.grpc.Channel channel) {
+      super(channel);
+    }
+
+    private ablindsBlockingStub(io.grpc.Channel channel,
+        io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ablindsBlockingStub build(io.grpc.Channel channel,
+        io.grpc.CallOptions callOptions) {
+      return new ablindsBlockingStub(channel, callOptions);
+    }
+
+    /**
+     */
+    public SB.grpc.APIABlindsResponse ablindsswitch(SB.grpc.ABlindsSwitchRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getAblindsswitchMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public java.util.Iterator<SB.grpc.APISwitchOffAllABlinds> ablindsswitchall(
+        SB.grpc.SwitchOffAllABlinds request) {
+      return blockingServerStreamingCall(
+          getChannel(), getAblindsswitchallMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   */
+  public static final class ablindsFutureStub extends io.grpc.stub.AbstractStub<ablindsFutureStub> {
+    private ablindsFutureStub(io.grpc.Channel channel) {
+      super(channel);
+    }
+
+    private ablindsFutureStub(io.grpc.Channel channel,
+        io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ablindsFutureStub build(io.grpc.Channel channel,
+        io.grpc.CallOptions callOptions) {
+      return new ablindsFutureStub(channel, callOptions);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<SB.grpc.APIABlindsResponse> ablindsswitch(
+        SB.grpc.ABlindsSwitchRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getAblindsswitchMethod(), getCallOptions()), request);
+    }
+  }
+
+  private static final int METHODID_ABLINDSSWITCH = 0;
+  private static final int METHODID_ABLINDSSWITCHALL = 1;
+
+  private static final class MethodHandlers<Req, Resp> implements
+      io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
+      io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
+      io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
+      io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
+    private final ablindsImplBase serviceImpl;
+    private final int methodId;
+
+    MethodHandlers(ablindsImplBase serviceImpl, int methodId) {
+      this.serviceImpl = serviceImpl;
+      this.methodId = methodId;
+    }
+
+    @java.lang.Override
+    @java.lang.SuppressWarnings("unchecked")
+    public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
+      switch (methodId) {
+        case METHODID_ABLINDSSWITCH:
+          serviceImpl.ablindsswitch((SB.grpc.ABlindsSwitchRequest) request,
+              (io.grpc.stub.StreamObserver<SB.grpc.APIABlindsResponse>) responseObserver);
+          break;
+        case METHODID_ABLINDSSWITCHALL:
+          serviceImpl.ablindsswitchall((SB.grpc.SwitchOffAllABlinds) request,
+              (io.grpc.stub.StreamObserver<SB.grpc.APISwitchOffAllABlinds>) responseObserver);
+          break;
+        default:
+          throw new AssertionError();
+      }
+    }
+
+    @java.lang.Override
+    @java.lang.SuppressWarnings("unchecked")
+    public io.grpc.stub.StreamObserver<Req> invoke(
+        io.grpc.stub.StreamObserver<Resp> responseObserver) {
+      switch (methodId) {
+        default:
+          throw new AssertionError();
+      }
+    }
+  }
+
+  private static abstract class ablindsBaseDescriptorSupplier
+      implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
+    ablindsBaseDescriptorSupplier() {}
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
+      return SB.grpc.ABlinds.getDescriptor();
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
+      return getFileDescriptor().findServiceByName("ablinds");
+    }
+  }
+
+  private static final class ablindsFileDescriptorSupplier
+      extends ablindsBaseDescriptorSupplier {
+    ablindsFileDescriptorSupplier() {}
+  }
+
+  private static final class ablindsMethodDescriptorSupplier
+      extends ablindsBaseDescriptorSupplier
+      implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
+    private final String methodName;
+
+    ablindsMethodDescriptorSupplier(String methodName) {
+      this.methodName = methodName;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.MethodDescriptor getMethodDescriptor() {
+      return getServiceDescriptor().findMethodByName(methodName);
+    }
+  }
+
+  private static volatile io.grpc.ServiceDescriptor serviceDescriptor;
+
+  public static io.grpc.ServiceDescriptor getServiceDescriptor() {
+    io.grpc.ServiceDescriptor result = serviceDescriptor;
+    if (result == null) {
+      synchronized (ablindsGrpc.class) {
+        result = serviceDescriptor;
+        if (result == null) {
+          serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
+              .setSchemaDescriptor(new ablindsFileDescriptorSupplier())
+              .addMethod(getAblindsswitchMethod())
+              .addMethod(getAblindsswitchallMethod())
+              .build();
+        }
+      }
+    }
+    return result;
+  }
+}

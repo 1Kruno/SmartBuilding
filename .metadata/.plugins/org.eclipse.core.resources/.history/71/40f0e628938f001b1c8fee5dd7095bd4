@@ -1,0 +1,4 @@
+aservice_type=_alarm._tcp.local.
+aservice_name=simple_alarm
+aservice_description=service for controlling alarm
+aservice_port=9080

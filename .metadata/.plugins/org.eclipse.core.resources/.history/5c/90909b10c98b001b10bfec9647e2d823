@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option java_package = "SB.grpc";
+
+service lights
+{
+	rpc lightswitch(SwitchRequest) returns(APILightsResponse);
+	rpc switchout(Empty) returns(APILightsResponse);
+}
+
+message SwitchRequest
+{
+	string lightsstatus = 1;
+	string lightsroom = 2;
+}
+
+message APILightsResponse
+{
+	string responsemessage = 1;
+	int32 responsecode = 2;
+}
+
+message APIResponse
+{
+	string responsemessage = 1;
+	int32 responsecode = 2;
+}
+
+message Empty
+{
+}

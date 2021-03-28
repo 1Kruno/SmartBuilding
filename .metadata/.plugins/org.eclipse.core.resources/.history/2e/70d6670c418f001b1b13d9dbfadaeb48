@@ -1,0 +1,38 @@
+def lookout(roomnumber):
+
+	hallway = 0
+	kitchen = 1
+	bathroom = 2
+	livingroom = 3
+	bedroom1 = 4
+	bedroom2 = 5
+
+	if room == 0:
+		status = "Blinds in the hallway are shut."
+		print(status)
+		return status
+	elif room == 1:
+		status = "Blinds in the kitchen are shut."
+		print(status)
+		return status
+	elif room == 2:
+		status = "Blinds in the bathroom are shut."
+		print(status)
+		return status
+	elif room == 3:
+		status = "Blinds in the living room are shut."
+		print(status)
+		return status
+	elif room == 4:
+		status = "Blinds in the bedroom 1 are shut."
+		print(status)
+		return status
+	elif room == 5:
+		status = "Blinds in the bedroom 2 are shut."
+		print(status)
+		return status
+	else:
+		status = "The room number is not recognised."
+		print(status)
+		return status
+

@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "SB.grpc";
+option java_outer_classname = "Lights";
+
+service lights
+{
+	rpc lightswitch(SwitchRequest) returns(APILightsResponse);
+	rpc switchout(Empty) returns(APILightsResponse);
+}
+
+message SwitchRequest
+{
+	int32 lightsstatus = 1;
+	int32 lightsroom = 2;
+}
+
+message APILightsResponse
+{
+	string responsemessage = 1;
+	string responsecode = 2;
+}
+
+
+message Empty
+{
+}

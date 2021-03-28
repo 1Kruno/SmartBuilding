@@ -1,0 +1,38 @@
+package client;
+
+import SB.grpc.APILightsResponse;
+import SB.grpc.SwitchRequest;
+import SB.grpc.lightsGrpc;
+import SB.grpc.lightsGrpc.lightsBlockingStub;
+import SB.grpc.lightsGrpc.lightsStub;
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
+
+
+
+public class SBClient 
+{
+	private static lightsBlockingStub lblockstub;
+	private static lightsStub lasyncstub;
+	
+	public static void main(String[] args) 
+	{
+		ManagedChannel lchannel = ManagedChannelBuilder.forAddress("localhost", 9090).usePlaintext().build();
+		lblockstub = lightsGrpc.newBlockingStub(lchannel);
+		lasyncstub = lightsGrpc.newStub(lchannel);
+		
+		lightswitch();
+	}
+	
+	public static void lightswitch()
+	{
+		String value1 = "1";
+		String value2 = "1";
+		
+		SwitchRequest lreq = SwitchRequest.newBuilder().setLightsstatus(value1).setLightsroom(value2).build();
+		APILightsResponse lres = lblockstub.lightswitch(lreq);
+		
+		System.out.println("CLEINT MSG - lres: " + lres.getResponsemessage() + " mes: " + lres.getResponsemessage());
+	}
+
+}

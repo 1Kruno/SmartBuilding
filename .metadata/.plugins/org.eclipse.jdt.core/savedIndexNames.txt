@@ -1,0 +1,25 @@
+INDEX VERSION 1.131+C:\Users\Kruno\eclipse-workspace-1\.metadata\.plugins\org.eclipse.jdt.core
+2879668093.index
+435283196.index
+2470922409.index
+3282415122.index
+3165445571.index
+811372135.index
+4277052716.index
+3307510561.index
+2214390641.index
+176406107.index
+2931614452.index
+1113427481.index
+449554794.index
+2125254130.index
+921818621.index
+3277648641.index
+3018428326.index
+951056077.index
+306884895.index
+2277281481.index
+3963686701.index
+4249874339.index
+1468565675.index
+467977480.index
