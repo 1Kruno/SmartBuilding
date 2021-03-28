@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "SB.grpc";
+option java_outer_classname = "Curtains";
+
+service curtains
+{
+	rpc cswitch(CRequest) returns(APICResponse);
+	rpc cswitchall(AllC) returns(stream APIAllC);
+}
+
+message CRequest
+{
+	int32 cstatus = 1;
+	int32 croom = 2;
+}
+
+message APICResponse
+{
+	string cresponsemessage = 1;
+	string cresponsecode = 2;
+}
+
+message AllC
+{
+	string cAllrequest = 1;
+}
+
+message APIAllC
+{
+	string cAllresponse = 1;
+}

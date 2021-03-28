@@ -23,6 +23,7 @@ import io.grpc.stub.StreamObserver;
 
 public class LightsServer extends lightsImplBase
 {
+	// enumeration
 	// 0 is off, 1 is on
 	public static int hallwaylight = 0; // 0
 	public static int kitchenlight = 0;// 1
@@ -33,7 +34,7 @@ public class LightsServer extends lightsImplBase
 	
 	public static void main(String[] args)
 	{
-		
+		// server declaration and registration
 		LightsServer ls = new LightsServer();
 		Properties lp = ls.getProperties();
 		ls.registerService(lp);
@@ -41,6 +42,7 @@ public class LightsServer extends lightsImplBase
 		
 		try 
 		{
+			// server declared & initialized 
 			Server server = ServerBuilder.forPort(lport).addService(ls).build().start();
 			System.out.println("Lights Server started, listening on " + lport);
 			server.awaitTermination();
@@ -56,10 +58,12 @@ public class LightsServer extends lightsImplBase
 			e.printStackTrace();
 		}
 	}
-	
+	// get properties from the properties file
 	private Properties getProperties() 
 	{
+		// initialize properties
 		Properties lp = null;		
+		// read properties
 		 try (InputStream input = new FileInputStream("src/main/resources/lights.properties")) 
 		 {
 	            lp = new Properties();
@@ -67,7 +71,7 @@ public class LightsServer extends lightsImplBase
 	            // load a properties file
 	            lp.load(input);
 
-	            // get the property value and print it out
+	            // get the property values and print them out
 	            System.out.println("Lights properties ...");
 	            System.out.println("\t service_type: " + lp.getProperty("service_type"));
 	            System.out.println("\t service_name: " + lp.getProperty("service_name"));
@@ -82,18 +86,19 @@ public class LightsServer extends lightsImplBase
 	     }
 		 return lp;
 	}
-	
+	// service registration
 	private void registerService(Properties lp) 
 	{
 		
 		 try 
 		 {
+			 	// Create a JmDNS instance
 	            JmDNS jmdns = JmDNS.create(InetAddress.getLocalHost());
-	            
+	            // get properties
 	            String service_type = lp.getProperty("service_type");
 	            String service_name = lp.getProperty("service_name");
 	            int service_port = Integer.valueOf( lp.getProperty("service_port"));
-
+	            // Register a service
 	            String service_description_properties = lp.getProperty("service_description");
 	            
 	            ServiceInfo serviceInfo = ServiceInfo.create(service_type, service_name, service_port, service_description_properties);
@@ -102,7 +107,6 @@ public class LightsServer extends lightsImplBase
 	            System.out.printf("Registrering service with type %s and name %s \n", service_type, service_name);
 	            
 	            Thread.sleep(1000);
-	            //jmdns.unregisterAllServices();
 	     } 
 		 catch (IOException e) 
 		 {
@@ -114,18 +118,10 @@ public class LightsServer extends lightsImplBase
 				e.printStackTrace();
 		 }
 	}
-	
+	// method for light switch
 	public void lightswitch(SwitchRequest switchrequest, StreamObserver<APILightsResponse> responseObserver)
 	{
-		/*
-		int hallwaylight = 0; // 0
-		int kitchenlight = 0;// 1
-		int wclight = 0;// 2
-		int livingroomlight = 0;// 3
-		int bedroom1light = 0;// 4
-		int bedroom2light = 0;// 5
-		*/
-		
+		// status of all rooms on each call
 		System.out.println("hallwaylight " + hallwaylight);
 		System.out.println("kitchenlight " + kitchenlight);
 		System.out.println("wclight " + wclight);
@@ -135,11 +131,11 @@ public class LightsServer extends lightsImplBase
 		
 		System.out.println("Receiving info from the client - Lights status " + switchrequest.getLightsstatus() + " , " + switchrequest.getLightsroom());
 		
-		int value = 0;
-		int value2 = 1;
+		int value = 0; // light is off
+		int value2 = 1; // light is on
 		String msg = "";
 		String turned = "";
-
+		// check the status of the light in selected room. If on, swicth off and vice versa
 		if(switchrequest.getLightsroom() == 0)
 		{
 			if(hallwaylight == switchrequest.getLightsstatus())
@@ -342,7 +338,7 @@ public class LightsServer extends lightsImplBase
 		{
 			System.out.println("No such room");
 		}
-		
+		// send reply back
 		APILightsResponse reply = APILightsResponse.newBuilder().setResponsemessage(msg + turned).setResponsecode("SUCCESS").build();
 		responseObserver.onNext(reply);
 		responseObserver.onCompleted();
@@ -354,14 +350,15 @@ public class LightsServer extends lightsImplBase
 		System.out.println("bedroom1light " + bedroom1light);
 		System.out.println("bedroom2light " + bedroom2light);
 	}
-	
+	// method for switching off all lights
 	public void lightswitchall(SwitchOffAllLights request, StreamObserver<APISwitchOffAllLights> responseObserver)
 	{
+		// check for pass key
 		if(request.getSwitchOffAll().contentEquals("toall"))
 		{
 			System.out.println("Server received request to switch off all lights: ");
 			System.out.println(request.getSwitchOffAll());
-		
+			// get rooms
 			String place = "";
 			String hallway = "hallway";
 			String kitchen = "kitchen";
@@ -369,14 +366,14 @@ public class LightsServer extends lightsImplBase
 			String livingroom = "living room";
 			String bedroom1 = "bedroom 1";
 			String bedroom2 = "bedroom 2";
-			
+			// set them all off
 			hallwaylight = 0; 
 			kitchenlight = 0;
 			wclight = 0;
 			livingroomlight = 0;
 			bedroom1light = 0;
 			bedroom2light = 0;
-			
+			// add to list
 			ArrayList <String> rooms = new ArrayList<>();
 			rooms.add(hallway);
 			rooms.add(kitchen);
@@ -384,7 +381,7 @@ public class LightsServer extends lightsImplBase
 			rooms.add(livingroom);
 			rooms.add(bedroom1);
 			rooms.add(bedroom2);
-			
+			// for each send reply
 			for(int i=0; i<rooms.size();i++)
 			{
 				place = rooms.get(i);

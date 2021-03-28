@@ -27,68 +27,68 @@ public final class roombaGrpc {
   public static final String SERVICE_NAME = "roomba";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<SB.grpc.Roomba.RoombaRequest,
-      SB.grpc.Roomba.APIRoomResponse> getRoombaMethod;
+  private static volatile io.grpc.MethodDescriptor<SB.grpc.CleanSelectedRooms,
+      SB.grpc.APICleanSelectedRoomsResponse> getCleanMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "roomba",
-      requestType = SB.grpc.Roomba.RoombaRequest.class,
-      responseType = SB.grpc.Roomba.APIRoomResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<SB.grpc.Roomba.RoombaRequest,
-      SB.grpc.Roomba.APIRoomResponse> getRoombaMethod() {
-    io.grpc.MethodDescriptor<SB.grpc.Roomba.RoombaRequest, SB.grpc.Roomba.APIRoomResponse> getRoombaMethod;
-    if ((getRoombaMethod = roombaGrpc.getRoombaMethod) == null) {
+      fullMethodName = SERVICE_NAME + '/' + "clean",
+      requestType = SB.grpc.CleanSelectedRooms.class,
+      responseType = SB.grpc.APICleanSelectedRoomsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+  public static io.grpc.MethodDescriptor<SB.grpc.CleanSelectedRooms,
+      SB.grpc.APICleanSelectedRoomsResponse> getCleanMethod() {
+    io.grpc.MethodDescriptor<SB.grpc.CleanSelectedRooms, SB.grpc.APICleanSelectedRoomsResponse> getCleanMethod;
+    if ((getCleanMethod = roombaGrpc.getCleanMethod) == null) {
       synchronized (roombaGrpc.class) {
-        if ((getRoombaMethod = roombaGrpc.getRoombaMethod) == null) {
-          roombaGrpc.getRoombaMethod = getRoombaMethod = 
-              io.grpc.MethodDescriptor.<SB.grpc.Roomba.RoombaRequest, SB.grpc.Roomba.APIRoomResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+        if ((getCleanMethod = roombaGrpc.getCleanMethod) == null) {
+          roombaGrpc.getCleanMethod = getCleanMethod = 
+              io.grpc.MethodDescriptor.<SB.grpc.CleanSelectedRooms, SB.grpc.APICleanSelectedRoomsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
               .setFullMethodName(generateFullMethodName(
-                  "roomba", "roomba"))
+                  "roomba", "clean"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  SB.grpc.Roomba.RoombaRequest.getDefaultInstance()))
+                  SB.grpc.CleanSelectedRooms.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  SB.grpc.Roomba.APIRoomResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new roombaMethodDescriptorSupplier("roomba"))
+                  SB.grpc.APICleanSelectedRoomsResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new roombaMethodDescriptorSupplier("clean"))
                   .build();
           }
         }
      }
-     return getRoombaMethod;
+     return getCleanMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<SB.grpc.Roomba.REmpty,
-      SB.grpc.Roomba.APIRoomResponse> getRoombaoutMethod;
+  private static volatile io.grpc.MethodDescriptor<SB.grpc.CleanAllRooms,
+      SB.grpc.APICleanAllRoomsResponse> getCleanAllMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "roombaout",
-      requestType = SB.grpc.Roomba.REmpty.class,
-      responseType = SB.grpc.Roomba.APIRoomResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<SB.grpc.Roomba.REmpty,
-      SB.grpc.Roomba.APIRoomResponse> getRoombaoutMethod() {
-    io.grpc.MethodDescriptor<SB.grpc.Roomba.REmpty, SB.grpc.Roomba.APIRoomResponse> getRoombaoutMethod;
-    if ((getRoombaoutMethod = roombaGrpc.getRoombaoutMethod) == null) {
+      fullMethodName = SERVICE_NAME + '/' + "cleanAll",
+      requestType = SB.grpc.CleanAllRooms.class,
+      responseType = SB.grpc.APICleanAllRoomsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+  public static io.grpc.MethodDescriptor<SB.grpc.CleanAllRooms,
+      SB.grpc.APICleanAllRoomsResponse> getCleanAllMethod() {
+    io.grpc.MethodDescriptor<SB.grpc.CleanAllRooms, SB.grpc.APICleanAllRoomsResponse> getCleanAllMethod;
+    if ((getCleanAllMethod = roombaGrpc.getCleanAllMethod) == null) {
       synchronized (roombaGrpc.class) {
-        if ((getRoombaoutMethod = roombaGrpc.getRoombaoutMethod) == null) {
-          roombaGrpc.getRoombaoutMethod = getRoombaoutMethod = 
-              io.grpc.MethodDescriptor.<SB.grpc.Roomba.REmpty, SB.grpc.Roomba.APIRoomResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+        if ((getCleanAllMethod = roombaGrpc.getCleanAllMethod) == null) {
+          roombaGrpc.getCleanAllMethod = getCleanAllMethod = 
+              io.grpc.MethodDescriptor.<SB.grpc.CleanAllRooms, SB.grpc.APICleanAllRoomsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
               .setFullMethodName(generateFullMethodName(
-                  "roomba", "roombaout"))
+                  "roomba", "cleanAll"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  SB.grpc.Roomba.REmpty.getDefaultInstance()))
+                  SB.grpc.CleanAllRooms.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  SB.grpc.Roomba.APIRoomResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new roombaMethodDescriptorSupplier("roombaout"))
+                  SB.grpc.APICleanAllRoomsResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new roombaMethodDescriptorSupplier("cleanAll"))
                   .build();
           }
         }
      }
-     return getRoombaoutMethod;
+     return getCleanAllMethod;
   }
 
   /**
@@ -120,34 +120,34 @@ public final class roombaGrpc {
 
     /**
      */
-    public void roomba(SB.grpc.Roomba.RoombaRequest request,
-        io.grpc.stub.StreamObserver<SB.grpc.Roomba.APIRoomResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getRoombaMethod(), responseObserver);
+    public io.grpc.stub.StreamObserver<SB.grpc.CleanSelectedRooms> clean(
+        io.grpc.stub.StreamObserver<SB.grpc.APICleanSelectedRoomsResponse> responseObserver) {
+      return asyncUnimplementedStreamingCall(getCleanMethod(), responseObserver);
     }
 
     /**
      */
-    public void roombaout(SB.grpc.Roomba.REmpty request,
-        io.grpc.stub.StreamObserver<SB.grpc.Roomba.APIRoomResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getRoombaoutMethod(), responseObserver);
+    public io.grpc.stub.StreamObserver<SB.grpc.CleanAllRooms> cleanAll(
+        io.grpc.stub.StreamObserver<SB.grpc.APICleanAllRoomsResponse> responseObserver) {
+      return asyncUnimplementedStreamingCall(getCleanAllMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            getRoombaMethod(),
-            asyncUnaryCall(
+            getCleanMethod(),
+            asyncBidiStreamingCall(
               new MethodHandlers<
-                SB.grpc.Roomba.RoombaRequest,
-                SB.grpc.Roomba.APIRoomResponse>(
-                  this, METHODID_ROOMBA)))
+                SB.grpc.CleanSelectedRooms,
+                SB.grpc.APICleanSelectedRoomsResponse>(
+                  this, METHODID_CLEAN)))
           .addMethod(
-            getRoombaoutMethod(),
-            asyncUnaryCall(
+            getCleanAllMethod(),
+            asyncClientStreamingCall(
               new MethodHandlers<
-                SB.grpc.Roomba.REmpty,
-                SB.grpc.Roomba.APIRoomResponse>(
-                  this, METHODID_ROOMBAOUT)))
+                SB.grpc.CleanAllRooms,
+                SB.grpc.APICleanAllRoomsResponse>(
+                  this, METHODID_CLEAN_ALL)))
           .build();
     }
   }
@@ -172,18 +172,18 @@ public final class roombaGrpc {
 
     /**
      */
-    public void roomba(SB.grpc.Roomba.RoombaRequest request,
-        io.grpc.stub.StreamObserver<SB.grpc.Roomba.APIRoomResponse> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getRoombaMethod(), getCallOptions()), request, responseObserver);
+    public io.grpc.stub.StreamObserver<SB.grpc.CleanSelectedRooms> clean(
+        io.grpc.stub.StreamObserver<SB.grpc.APICleanSelectedRoomsResponse> responseObserver) {
+      return asyncBidiStreamingCall(
+          getChannel().newCall(getCleanMethod(), getCallOptions()), responseObserver);
     }
 
     /**
      */
-    public void roombaout(SB.grpc.Roomba.REmpty request,
-        io.grpc.stub.StreamObserver<SB.grpc.Roomba.APIRoomResponse> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getRoombaoutMethod(), getCallOptions()), request, responseObserver);
+    public io.grpc.stub.StreamObserver<SB.grpc.CleanAllRooms> cleanAll(
+        io.grpc.stub.StreamObserver<SB.grpc.APICleanAllRoomsResponse> responseObserver) {
+      return asyncClientStreamingCall(
+          getChannel().newCall(getCleanAllMethod(), getCallOptions()), responseObserver);
     }
   }
 
@@ -204,20 +204,6 @@ public final class roombaGrpc {
         io.grpc.CallOptions callOptions) {
       return new roombaBlockingStub(channel, callOptions);
     }
-
-    /**
-     */
-    public SB.grpc.Roomba.APIRoomResponse roomba(SB.grpc.Roomba.RoombaRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getRoombaMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public SB.grpc.Roomba.APIRoomResponse roombaout(SB.grpc.Roomba.REmpty request) {
-      return blockingUnaryCall(
-          getChannel(), getRoombaoutMethod(), getCallOptions(), request);
-    }
   }
 
   /**
@@ -237,26 +223,10 @@ public final class roombaGrpc {
         io.grpc.CallOptions callOptions) {
       return new roombaFutureStub(channel, callOptions);
     }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<SB.grpc.Roomba.APIRoomResponse> roomba(
-        SB.grpc.Roomba.RoombaRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getRoombaMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<SB.grpc.Roomba.APIRoomResponse> roombaout(
-        SB.grpc.Roomba.REmpty request) {
-      return futureUnaryCall(
-          getChannel().newCall(getRoombaoutMethod(), getCallOptions()), request);
-    }
   }
 
-  private static final int METHODID_ROOMBA = 0;
-  private static final int METHODID_ROOMBAOUT = 1;
+  private static final int METHODID_CLEAN = 0;
+  private static final int METHODID_CLEAN_ALL = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -275,14 +245,6 @@ public final class roombaGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_ROOMBA:
-          serviceImpl.roomba((SB.grpc.Roomba.RoombaRequest) request,
-              (io.grpc.stub.StreamObserver<SB.grpc.Roomba.APIRoomResponse>) responseObserver);
-          break;
-        case METHODID_ROOMBAOUT:
-          serviceImpl.roombaout((SB.grpc.Roomba.REmpty) request,
-              (io.grpc.stub.StreamObserver<SB.grpc.Roomba.APIRoomResponse>) responseObserver);
-          break;
         default:
           throw new AssertionError();
       }
@@ -293,6 +255,12 @@ public final class roombaGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_CLEAN:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.clean(
+              (io.grpc.stub.StreamObserver<SB.grpc.APICleanSelectedRoomsResponse>) responseObserver);
+        case METHODID_CLEAN_ALL:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.cleanAll(
+              (io.grpc.stub.StreamObserver<SB.grpc.APICleanAllRoomsResponse>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -344,8 +312,8 @@ public final class roombaGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new roombaFileDescriptorSupplier())
-              .addMethod(getRoombaMethod())
-              .addMethod(getRoombaoutMethod())
+              .addMethod(getCleanMethod())
+              .addMethod(getCleanAllMethod())
               .build();
         }
       }

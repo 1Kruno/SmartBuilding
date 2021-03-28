@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ASCII"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_efHrkIVpEeuFhu97MstW_w" elementId="org.eclipse.e4.legacy.ide.application" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_efHrkYVpEeuFhu97MstW_w" bindingContexts="_efHrmoVpEeuFhu97MstW_w">
-  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;workbench>&#xD;&#xA;&lt;mruList>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;ClinetGUI.java&quot; tooltip=&quot;sb/src/main/java/client/ClinetGUI.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/java/client/ClinetGUI.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;RoombaServer.java&quot; tooltip=&quot;sb/src/main/java/SBServers/RoombaServer.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/java/SBServers/RoombaServer.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;LightsServer.java&quot; tooltip=&quot;sb/src/main/java/SBServers/LightsServer.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/java/SBServers/LightsServer.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;CurtainServer.java&quot; tooltip=&quot;sb/src/main/java/SBServers/CurtainServer.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/java/SBServers/CurtainServer.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;AlarmServer.java&quot; tooltip=&quot;sb/src/main/java/SBServers/AlarmServer.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/java/SBServers/AlarmServer.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.genuitec.eclipse.code.python&quot; name=&quot;AlarmClient2.py&quot; tooltip=&quot;sb/src/main/resources/AlarmClient2.py&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/resources/AlarmClient2.py&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.genuitec.eclipse.code.python&quot; name=&quot;alarm_pb2_grpc.py&quot; tooltip=&quot;sb/src/main/resources/alarm_pb2_grpc.py&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/resources/alarm_pb2_grpc.py&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.ui.DefaultTextEditor&quot; name=&quot;AlarmClientOff&quot; tooltip=&quot;sb/src/main/resources/AlarmClientOff&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/resources/AlarmClientOff&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.m2e.editor.MavenPomEditor&quot; name=&quot;pom.xml&quot; tooltip=&quot;sb/pom.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/pom.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.PropertiesFileEditor&quot; name=&quot;alarm.properties&quot; tooltip=&quot;sb/src/main/resources/alarm.properties&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/resources/alarm.properties&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.PropertiesFileEditor&quot; name=&quot;curtains.properties&quot; tooltip=&quot;sb/src/main/resources/curtains.properties&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/resources/curtains.properties&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.nodeclipse.enide.editors.proto.Editor&quot; name=&quot;alarm.proto&quot; tooltip=&quot;sb/src/main/resources/alarm.proto&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/resources/alarm.proto&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.genuitec.eclipse.code.python&quot; name=&quot;AlarmServer.py&quot; tooltip=&quot;sb/src/main/resources/AlarmServer.py&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/resources/AlarmServer.py&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.genuitec.eclipse.code.python&quot; name=&quot;AlarmClient.py&quot; tooltip=&quot;sb/src/main/resources/AlarmClient.py&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/resources/AlarmClient.py&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.genuitec.eclipse.code.python&quot; name=&quot;AlarmClient.py&quot; tooltip=&quot;sb/src/main/java/client/AlarmClient.py&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/java/client/AlarmClient.py&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.ui.DefaultTextEditor&quot; name=&quot;AlarmClient&quot; tooltip=&quot;sb/src/main/java/client/AlarmClient&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/java/client/AlarmClient&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.nodeclipse.enide.editors.proto.Editor&quot; name=&quot;lights.proto&quot; tooltip=&quot;sb/src/main/resources/lights.proto&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/resources/lights.proto&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.nodeclipse.enide.editors.proto.Editor&quot; name=&quot;curtains.proto&quot; tooltip=&quot;sb/src/main/resources/curtains.proto&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/resources/curtains.proto&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;alarmGrpc.java&quot; tooltip=&quot;sb/src/main/java/SB/grpc/alarmGrpc.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/java/SB/grpc/alarmGrpc.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;/mruList>&#xD;&#xA;&lt;/workbench>"/>
+  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;workbench>&#xD;&#xA;&lt;mruList>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;ClinetGUI.java&quot; tooltip=&quot;sb/src/main/java/client/ClinetGUI.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/java/client/ClinetGUI.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;RoombaServer.java&quot; tooltip=&quot;sb/src/main/java/SBServers/RoombaServer.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/java/SBServers/RoombaServer.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;LightsServer.java&quot; tooltip=&quot;sb/src/main/java/SBServers/LightsServer.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/java/SBServers/LightsServer.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;CurtainServer.java&quot; tooltip=&quot;sb/src/main/java/SBServers/CurtainServer.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/java/SBServers/CurtainServer.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;AlarmServer.java&quot; tooltip=&quot;sb/src/main/java/SBServers/AlarmServer.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/java/SBServers/AlarmServer.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.genuitec.eclipse.code.python&quot; name=&quot;AlarmClient2.py&quot; tooltip=&quot;sb/src/main/resources/AlarmClient2.py&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/resources/AlarmClient2.py&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.genuitec.eclipse.code.python&quot; name=&quot;alarm_pb2_grpc.py&quot; tooltip=&quot;sb/src/main/resources/alarm_pb2_grpc.py&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/resources/alarm_pb2_grpc.py&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.ui.DefaultTextEditor&quot; name=&quot;AlarmClientOff&quot; tooltip=&quot;sb/src/main/resources/AlarmClientOff&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/resources/AlarmClientOff&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.m2e.editor.MavenPomEditor&quot; name=&quot;pom.xml&quot; tooltip=&quot;sb/pom.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/pom.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.PropertiesFileEditor&quot; name=&quot;alarm.properties&quot; tooltip=&quot;sb/src/main/resources/alarm.properties&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/resources/alarm.properties&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.PropertiesFileEditor&quot; name=&quot;curtains.properties&quot; tooltip=&quot;sb/src/main/resources/curtains.properties&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/resources/curtains.properties&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.nodeclipse.enide.editors.proto.Editor&quot; name=&quot;alarm.proto&quot; tooltip=&quot;sb/src/main/resources/alarm.proto&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/resources/alarm.proto&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.genuitec.eclipse.code.python&quot; name=&quot;AlarmServer.py&quot; tooltip=&quot;sb/src/main/resources/AlarmServer.py&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/resources/AlarmServer.py&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.genuitec.eclipse.code.python&quot; name=&quot;AlarmClient.py&quot; tooltip=&quot;sb/src/main/resources/AlarmClient.py&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/resources/AlarmClient.py&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.genuitec.eclipse.code.python&quot; name=&quot;AlarmClient.py&quot; tooltip=&quot;sb/src/main/java/client/AlarmClient.py&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/java/client/AlarmClient.py&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.ui.DefaultTextEditor&quot; name=&quot;AlarmClient&quot; tooltip=&quot;sb/src/main/java/client/AlarmClient&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/java/client/AlarmClient&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.nodeclipse.enide.editors.proto.Editor&quot; name=&quot;lights.proto&quot; tooltip=&quot;sb/src/main/resources/lights.proto&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/resources/lights.proto&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.nodeclipse.enide.editors.proto.Editor&quot; name=&quot;curtains.proto&quot; tooltip=&quot;sb/src/main/resources/curtains.proto&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/resources/curtains.proto&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;alarmGrpc.java&quot; tooltip=&quot;sb/src/main/java/SB/grpc/alarmGrpc.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/java/SB/grpc/alarmGrpc.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;BlindsServer.java&quot; tooltip=&quot;sb/src/main/java/SBServers/BlindsServer.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/sb/src/main/java/SBServers/BlindsServer.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;/mruList>&#xD;&#xA;&lt;/workbench>"/>
   <tags>activeSchemeId:org.eclipse.ui.defaultAcceleratorConfiguration</tags>
-  <children xsi:type="basic:TrimmedWindow" xmi:id="_efHrkYVpEeuFhu97MstW_w" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_epiy4oVpEeuFhu97MstW_w" label="%trimmedwindow.label.eclipseSDK" x="-9" y="41" width="1327" height="1344">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_efHrkYVpEeuFhu97MstW_w" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_epiy4oVpEeuFhu97MstW_w" label="%trimmedwindow.label.eclipseSDK" x="1218" y="67" width="1327" height="1344">
     <persistedState key="coolBarVisible" value="true"/>
     <persistedState key="perspectiveBarVisible" value="true"/>
     <persistedState key="isRestored" value="true"/>
@@ -81,7 +81,7 @@
           <tags>persp.viewSC:org.eclipse.wb.core.PaletteView</tags>
           <tags>persp.viewSC:org.eclipse.ant.ui.views.AntView</tags>
           <children xsi:type="basic:PartSashContainer" xmi:id="_eyCnkYVpEeuFhu97MstW_w" selectedElement="_eyCnnIVpEeuFhu97MstW_w" horizontal="true">
-            <children xsi:type="basic:PartSashContainer" xmi:id="_eyCnkoVpEeuFhu97MstW_w" containerData="2578" selectedElement="_eyCnmoVpEeuFhu97MstW_w">
+            <children xsi:type="basic:PartSashContainer" xmi:id="_eyCnkoVpEeuFhu97MstW_w" containerData="2578" selectedElement="_eyCnk4VpEeuFhu97MstW_w">
               <children xsi:type="basic:PartStack" xmi:id="_eyCnk4VpEeuFhu97MstW_w" elementId="left" containerData="6000" selectedElement="_eyCnlIVpEeuFhu97MstW_w">
                 <tags>org.eclipse.e4.primaryNavigationStack</tags>
                 <children xsi:type="advanced:Placeholder" xmi:id="_eyCnlIVpEeuFhu97MstW_w" elementId="org.eclipse.jdt.ui.PackageExplorer" ref="_ex7S0IVpEeuFhu97MstW_w" closeable="true">
@@ -109,15 +109,15 @@
                   <tags>categoryTag:WindowBuilder</tags>
                 </children>
               </children>
-              <children xsi:type="basic:PartStack" xmi:id="_eyCnmoVpEeuFhu97MstW_w" elementId="org.eclipse.egit.ui.RepositoriesViewMStack" containerData="4000" selectedElement="_eyCnm4VpEeuFhu97MstW_w">
-                <children xsi:type="advanced:Placeholder" xmi:id="_eyCnm4VpEeuFhu97MstW_w" elementId="org.eclipse.egit.ui.RepositoriesView" ref="_eyBZdIVpEeuFhu97MstW_w" closeable="true">
+              <children xsi:type="basic:PartStack" xmi:id="_eyCnmoVpEeuFhu97MstW_w" elementId="org.eclipse.egit.ui.RepositoriesViewMStack" toBeRendered="false" containerData="4000">
+                <children xsi:type="advanced:Placeholder" xmi:id="_eyCnm4VpEeuFhu97MstW_w" elementId="org.eclipse.egit.ui.RepositoriesView" toBeRendered="false" ref="_eyBZdIVpEeuFhu97MstW_w" closeable="true">
                   <tags>View</tags>
                   <tags>categoryTag:Git</tags>
                 </children>
               </children>
             </children>
             <children xsi:type="basic:PartSashContainer" xmi:id="_eyCnnIVpEeuFhu97MstW_w" containerData="7422" selectedElement="_eyCnpYVpEeuFhu97MstW_w">
-              <children xsi:type="basic:PartSashContainer" xmi:id="_eyCnnYVpEeuFhu97MstW_w" containerData="5808" selectedElement="_eyCnnoVpEeuFhu97MstW_w" horizontal="true">
+              <children xsi:type="basic:PartSashContainer" xmi:id="_eyCnnYVpEeuFhu97MstW_w" containerData="7465" selectedElement="_eyCnnoVpEeuFhu97MstW_w" horizontal="true">
                 <children xsi:type="advanced:Placeholder" xmi:id="_eyCnnoVpEeuFhu97MstW_w" elementId="org.eclipse.ui.editorss" containerData="7500" ref="_ex2aUIVpEeuFhu97MstW_w"/>
                 <children xsi:type="basic:PartStack" xmi:id="_eyCnn4VpEeuFhu97MstW_w" elementId="right" toBeRendered="false" containerData="2500">
                   <tags>org.eclipse.e4.secondaryNavigationStack</tags>
@@ -144,9 +144,8 @@
                   </children>
                 </children>
               </children>
-              <children xsi:type="basic:PartStack" xmi:id="_eyCnpYVpEeuFhu97MstW_w" elementId="bottom" containerData="4192" selectedElement="_6LBbkI_VEeugdsTagp2xmw">
+              <children xsi:type="basic:PartStack" xmi:id="_eyCnpYVpEeuFhu97MstW_w" elementId="bottom" containerData="2535" selectedElement="_eyCnqoVpEeuFhu97MstW_w">
                 <tags>org.eclipse.e4.secondaryDataStack</tags>
-                <tags>Git</tags>
                 <tags>active</tags>
                 <children xsi:type="advanced:Placeholder" xmi:id="_eyCnpoVpEeuFhu97MstW_w" elementId="org.eclipse.ui.views.ProblemView" ref="_ex8g8YVpEeuFhu97MstW_w" closeable="true">
                   <tags>View</tags>
@@ -191,10 +190,6 @@
                 <children xsi:type="advanced:Placeholder" xmi:id="_eyCnsIVpEeuFhu97MstW_w" elementId="org.eclipse.tm.terminal.view.ui.TerminalsView" ref="_eyCAgIVpEeuFhu97MstW_w" closeable="true">
                   <tags>View</tags>
                   <tags>categoryTag:Terminal</tags>
-                </children>
-                <children xsi:type="advanced:Placeholder" xmi:id="_6LBbkI_VEeugdsTagp2xmw" elementId="org.eclipse.egit.ui.StagingView" ref="_6LA0gI_VEeugdsTagp2xmw" closeable="true">
-                  <tags>View</tags>
-                  <tags>categoryTag:Git</tags>
                 </children>
               </children>
             </children>
@@ -415,11 +410,13 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view/>"/>
       <tags>View</tags>
       <tags>categoryTag:General</tags>
+      <tags>active</tags>
+      <tags>activeOnClose</tags>
       <menus xmi:id="_dvS90IY9EeuFhu97MstW_w" elementId="org.eclipse.ui.console.ConsoleView">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
       </menus>
-      <toolbar xmi:id="_dvS90YY9EeuFhu97MstW_w" elementId="org.eclipse.ui.console.ConsoleView" visible="false"/>
+      <toolbar xmi:id="_dvS90YY9EeuFhu97MstW_w" elementId="org.eclipse.ui.console.ConsoleView"/>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_ex9IAYVpEeuFhu97MstW_w" elementId="org.eclipse.ui.views.BookmarkView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Bookmarks" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/bkmrk_nav.png" tooltip="" closeable="true">
       <persistedState key="originalCompatibilityViewClass" value="org.eclipse.ui.internal.views.markers.BookmarksView"/>
@@ -485,14 +482,8 @@
     <sharedElements xsi:type="basic:Part" xmi:id="_eyBZdIVpEeuFhu97MstW_w" elementId="org.eclipse.egit.ui.RepositoriesView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Git Repositories" iconURI="platform:/plugin/org.eclipse.egit.ui/icons/eview16/repo_rep.png" tooltip="" closeable="true">
       <persistedState key="originalCompatibilityViewClass" value="org.eclipse.egit.ui.internal.repository.RepositoriesView"/>
       <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.egit.ui"/>
-      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view CommonNavigator.LINKING_ENABLED=&quot;0&quot;>&#xD;&#xA;&lt;lastRecentlyUsedFilters/>&#xD;&#xA;&lt;/view>"/>
       <tags>View</tags>
       <tags>categoryTag:Git</tags>
-      <menus xmi:id="_c8Kp0I_XEeugdsTagp2xmw" elementId="org.eclipse.egit.ui.RepositoriesView">
-        <tags>ViewMenu</tags>
-        <tags>menuContribution:menu</tags>
-      </menus>
-      <toolbar xmi:id="_c8Kp0Y_XEeugdsTagp2xmw" elementId="org.eclipse.egit.ui.RepositoriesView"/>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_eyCAgIVpEeuFhu97MstW_w" elementId="org.eclipse.tm.terminal.view.ui.TerminalsView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Terminal" iconURI="platform:/plugin/org.eclipse.tm.terminal.view.ui/icons/eview16/terminal_view.gif" tooltip="" closeable="true">
       <persistedState key="originalCompatibilityViewClass" value="org.eclipse.tm.terminal.view.ui.view.TerminalsView"/>
@@ -554,20 +545,6 @@
       </menus>
       <toolbar xmi:id="_fn0VoY8EEeub0IMoF4VL0A" elementId="org.python.pydev.debug.pyunit.pyUnitView" visible="false"/>
     </sharedElements>
-    <sharedElements xsi:type="basic:Part" xmi:id="_6LA0gI_VEeugdsTagp2xmw" elementId="org.eclipse.egit.ui.StagingView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Git Staging" iconURI="platform:/plugin/org.eclipse.egit.ui/icons/eview16/staging.png" tooltip="" closeable="true">
-      <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.egit.ui"/>
-      <persistedState key="originalCompatibilityViewClass" value="org.eclipse.egit.ui.internal.staging.StagingView"/>
-      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view/>"/>
-      <tags>View</tags>
-      <tags>categoryTag:Git</tags>
-      <tags>active</tags>
-      <tags>activeOnClose</tags>
-      <menus xmi:id="_6LTvcI_VEeugdsTagp2xmw" elementId="org.eclipse.egit.ui.StagingView">
-        <tags>ViewMenu</tags>
-        <tags>menuContribution:menu</tags>
-      </menus>
-      <toolbar xmi:id="_6LTvcY_VEeugdsTagp2xmw" elementId="org.eclipse.egit.ui.StagingView"/>
-    </sharedElements>
     <trimBars xmi:id="_efHrkoVpEeuFhu97MstW_w" elementId="org.eclipse.ui.main.toolbar" contributorURI="platform:/plugin/org.eclipse.platform">
       <children xsi:type="menu:ToolBar" xmi:id="_erxAcIVpEeuFhu97MstW_w" elementId="group.file" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -575,7 +552,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_erxngIVpEeuFhu97MstW_w" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_nXMJII_VEeugdsTagp2xmw" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_efffE4VpEeuFhu97MstW_w"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_VnimcI-nEeuxcrqa1jR0xg" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_efffE4VpEeuFhu97MstW_w"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_erxngYVpEeuFhu97MstW_w" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -609,7 +586,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_eryOkoVpEeuFhu97MstW_w" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_nXOlYI_VEeugdsTagp2xmw" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" enabled="false" type="Check" command="_efe3-IVpEeuFhu97MstW_w"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_VnkbpI-nEeuxcrqa1jR0xg" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" enabled="false" type="Check" command="_efe3-IVpEeuFhu97MstW_w"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_fBqX8IVpEeuFhu97MstW_w" elementId="com.genuitec.eclipse.code.css" visible="false">
         <tags>Draggable</tags>
@@ -3098,7 +3075,7 @@
   </addons>
   <addons xmi:id="_efHrp4VpEeuFhu97MstW_w" elementId="org.eclipse.ui.workbench.addon.0" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
   <addons xmi:id="_efNyMIVpEeuFhu97MstW_w" elementId="SplitterAddon" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.splitteraddon.SplitterAddon"/>
-  <addons xmi:id="_IYS0IKimEeS11vbz3f9ezw" elementId="org.eclipse.ui.ide.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.ide" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
+  <addons xmi:id="_VcraQI-nEeuxcrqa1jR0xg" elementId="org.eclipse.ui.ide.addon.0" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
   <addons xmi:id="_dz0JgGOlEeSMMaPQU2nlzw" elementId="org.eclipse.ui.ide.application.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.ui.ide.application/org.eclipse.ui.internal.ide.application.addons.ModelCleanupAddon"/>
   <categories xmi:id="_efYxUIVpEeuFhu97MstW_w" elementId="org.eclipse.team.ui.category.team" name="Version control (Team)" description="Actions that apply when working with a version control system"/>
   <categories xmi:id="_efYxUYVpEeuFhu97MstW_w" elementId="org.eclipse.ui.category.views" name="Views" description="Commands for opening views"/>

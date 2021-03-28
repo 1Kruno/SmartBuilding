@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "SB.grpc";
+option java_outer_classname = "Alarm";
+
+service alarm
+{
+	rpc alarmon(AlarmOnRequest) returns(APIAlarmOnResponse);
+	rpc alarmoff(AlarmOffRequest) returns(APIAlarmOffResponse);
+}
+
+message AlarmOnRequest
+{
+	string alarmonreqmessage = 1;
+}
+
+message APIAlarmOnResponse
+{
+	string alarmonresmessage = 1;
+}
+
+message AlarmOffRequest
+{
+	string alarmoffreqmessage = 1;
+}
+
+message APIAlarmOffResponse
+{
+	string alarmoffresmessage = 1;
+}
+
